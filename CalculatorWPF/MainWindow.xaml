@@ -1,0 +1,51 @@
+﻿<Window x:Class="CalculatorWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalculatorWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="500" WindowStyle="ThreeDBorderWindow">
+    <Grid x:Name="grid">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.75*"/>
+            <RowDefinition Height="0.5*">
+            </RowDefinition>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="12*"/>
+            <ColumnDefinition Width="12*"/>
+            <ColumnDefinition Width="12*"/>
+            <ColumnDefinition Width="11*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <!--1 строка-->
+        <Button x:Name="B1" Grid.Column="0" Grid.Row="1" Content="1" Background="#84798a" FontStyle="Normal" FontSize="36"/>
+        <Button x:Name="B2" Grid.Column="1" Grid.Row="1" Content="2" Background="#84798a" FontStyle="Normal" FontSize="36"/>
+        <Button x:Name="B3" Grid.Column="2" Grid.Row="1" Content="3" Background="#84798a" FontStyle="Normal" FontSize="36"/>
+        <Button x:Name="B_minus" Grid.Column="3" Grid.Row="1" Content="-" Background="#2c2834" Foreground="Gray" FontStyle="Normal" FontSize="36"/>
+        <!--2 строка-->
+        <Button x:Name="B4" Grid.Column="0" Grid.Row="2" Content="4" Background="#84798a" FontStyle="Normal" FontSize="36"/>
+        <Button x:Name="B5" Grid.Column="1" Grid.Row="2" Content="5" Background="#84798a" FontStyle="Normal" FontSize="36"/>
+        <Button x:Name="B6" Grid.Column="2" Grid.Row="2" Content="6" Background="#84798a" FontStyle="Normal" FontSize="36"/>
+
+        <Button x:Name="B_plus" Grid.Column="3" Grid.Row="2" Content="+" Background="#2c2834" FontStyle="Normal" Foreground="Gray" FontSize="36"/>
+        <!--3 строка-->
+        <Button x:Name="B7" Grid.Column="0" Grid.Row="3" Content="7" Background="#84798a" FontStyle="Normal" FontSize="36"/>
+        <Button x:Name="B8" Grid.Column="1" Grid.Row="3" Content="8" Background="#84798a" FontStyle="Normal" FontSize="36"/>
+        <Button x:Name="B9" Grid.Column="2" Grid.Row="3" Content="9" Background="#84798a" FontStyle="Normal" FontSize="36"/>
+
+        <Button x:Name="B_div" Grid.Column="3" Grid.Row="3" Content="/" Background="#2c2834" FontStyle="Normal" Foreground="Gray" FontSize="36"/>
+        <!--4 строка-->
+        <Button x:Name="B0" Grid.Column="1" Grid.Row="4" Content="0" Background="#84798a" FontStyle="Normal" FontSize="36" PreviewMouseLeftButtonDown="Button_PreviewMouseLeftButtonDown" PreviewMouseLeftButtonUp="Button_PreviewMouseLeftButtonUp"/>
+
+        <Button x:Name="B_clear" Grid.Column="0" Grid.Row="4" Content="C" Background="#2c2834" FontStyle="Normal" Foreground="Gray" FontSize="36"/>
+        <Button x:Name="B_mult" Grid.Column="2" Grid.Row="4" Content="*" Background="#2c2834" FontStyle="Normal" Foreground="Gray" FontSize="36"/>
+        <Button x:Name="B_result" Grid.Column="3" Grid.Row="4" Content="=" Background="#2c2834" FontStyle="Normal" Foreground="Gray" FontSize="36"/>
+        
+        <TextBlock x:Name="Text" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Margin="5" Background="GhostWhite"/>
+    </Grid>
+</Window>
