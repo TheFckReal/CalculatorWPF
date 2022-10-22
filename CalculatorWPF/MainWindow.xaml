@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="500" WindowStyle="ThreeDBorderWindow">
     <Grid x:Name="grid">
-
         <Grid.RowDefinitions>
             <RowDefinition Height="0.75*"/>
             <RowDefinition Height="0.5*">
@@ -23,20 +22,20 @@
             <ColumnDefinition Width="11*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <!--1 строка-->
-        <Button x:Name="B1" Grid.Column="0" Grid.Row="1" Content="1" Background="#84798a" FontStyle="Normal" FontSize="36"/>
-        <Button x:Name="B2" Grid.Column="1" Grid.Row="1" Content="2" Background="#84798a" FontStyle="Normal" FontSize="36"/>
-        <Button x:Name="B3" Grid.Column="2" Grid.Row="1" Content="3" Background="#84798a" FontStyle="Normal" FontSize="36"/>
-        <Button x:Name="B_minus" Grid.Column="3" Grid.Row="1" Content="-" Background="#2c2834" Foreground="Gray" FontStyle="Normal" FontSize="36"/>
+        <Button x:Name="B1" Grid.Column="0" Grid.Row="1" Content="1" Click="Button_number_Click" Background="#84798a" FontStyle="Normal" FontSize="36"/>
+        <Button x:Name="B2" Grid.Column="1" Grid.Row="1" Content="2" Click="Button_number_Click" Background="#84798a" FontStyle="Normal" FontSize="36"/>
+        <Button x:Name="B3" Grid.Column="2" Grid.Row="1" Content="3" Click="Button_number_Click" Background="#84798a" FontStyle="Normal" FontSize="36"/>
+        <Button x:Name="B_minus" Grid.Column="3" Grid.Row="1" Content="-" Click="B_minus_Click" Background="#2c2834" Foreground="Gray" FontStyle="Normal" FontSize="36"/>
         <!--2 строка-->
-        <Button x:Name="B4" Grid.Column="0" Grid.Row="2" Content="4" Background="#84798a" FontStyle="Normal" FontSize="36"/>
-        <Button x:Name="B5" Grid.Column="1" Grid.Row="2" Content="5" Background="#84798a" FontStyle="Normal" FontSize="36"/>
-        <Button x:Name="B6" Grid.Column="2" Grid.Row="2" Content="6" Background="#84798a" FontStyle="Normal" FontSize="36"/>
+        <Button x:Name="B4" Grid.Column="0" Grid.Row="2" Content="4" Click="Button_number_Click" Background="#84798a" FontStyle="Normal" FontSize="36"/>
+        <Button x:Name="B5" Grid.Column="1" Grid.Row="2" Content="5" Click="Button_number_Click" Background="#84798a" FontStyle="Normal" FontSize="36"/>
+        <Button x:Name="B6" Grid.Column="2" Grid.Row="2" Content="6" Click="Button_number_Click" Background="#84798a" FontStyle="Normal" FontSize="36"/>
 
         <Button x:Name="B_plus" Grid.Column="3" Grid.Row="2" Content="+" Background="#2c2834" FontStyle="Normal" Foreground="Gray" FontSize="36"/>
         <!--3 строка-->
-        <Button x:Name="B7" Grid.Column="0" Grid.Row="3" Content="7" Background="#84798a" FontStyle="Normal" FontSize="36"/>
-        <Button x:Name="B8" Grid.Column="1" Grid.Row="3" Content="8" Background="#84798a" FontStyle="Normal" FontSize="36"/>
-        <Button x:Name="B9" Grid.Column="2" Grid.Row="3" Content="9" Background="#84798a" FontStyle="Normal" FontSize="36"/>
+        <Button x:Name="B7" Grid.Column="0" Grid.Row="3" Content="7" Click="Button_number_Click" Background="#84798a" FontStyle="Normal" FontSize="36"/>
+        <Button x:Name="B8" Grid.Column="1" Grid.Row="3" Content="8" Click="Button_number_Click" Background="#84798a" FontStyle="Normal" FontSize="36"/>
+        <Button x:Name="B9" Grid.Column="2" Grid.Row="3" Content="9" Click="Button_number_Click" Background="#84798a" FontStyle="Normal" FontSize="36"/>
 
         <Button x:Name="B_div" Grid.Column="3" Grid.Row="3" Content="/" Background="#2c2834" FontStyle="Normal" Foreground="Gray" FontSize="36"/>
         <!--4 строка-->
@@ -44,8 +43,8 @@
 
         <Button x:Name="B_clear" Grid.Column="0" Grid.Row="4" Content="C" Background="#2c2834" FontStyle="Normal" Foreground="Gray" FontSize="36"/>
         <Button x:Name="B_mult" Grid.Column="2" Grid.Row="4" Content="*" Background="#2c2834" FontStyle="Normal" Foreground="Gray" FontSize="36"/>
-        <Button x:Name="B_result" Grid.Column="3" Grid.Row="4" Content="=" Background="#2c2834" FontStyle="Normal" Foreground="Gray" FontSize="36"/>
-        
-        <TextBlock x:Name="Text" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Margin="5" Background="GhostWhite"/>
+        <Button x:Name="B_result" Grid.Column="3" Grid.Row="4" Content="=" Background="#2c2834" FontStyle="Normal" Foreground="Gray" FontSize="36" Click="B_result_Click"/>
+
+        <TextBlock x:Name="Text" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" FontSize="36" Margin="5" Background="GhostWhite"/>
     </Grid>
 </Window>
