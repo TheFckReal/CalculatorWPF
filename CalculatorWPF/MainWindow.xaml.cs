@@ -24,10 +24,11 @@ namespace CalculatorWPF
         public MainWindow()
         {
             InitializeComponent();
-            string Text1 = "", Text2 = "";
             bool Second_Lay = false;
         }
 
+        const string POINT_SYMBOL = ",";
+        const string ERROR_SYMBOL = "E";
 
         private string Text1 = "", Text2 = "";
         private bool Second_Lay = false;
@@ -41,23 +42,28 @@ namespace CalculatorWPF
 
         private void Button_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            if (Text.Text.Length > 10 || (Text.Text.Length > 11 && Text.Text.Contains("."))) {
-                Text.Text = "E";
-                return;
-            }
-            if (Text.Text == "E")
+            if ((DateTime.Now - click_Started).TotalSeconds > 0.1)
             {
-                Text.Text = "";
-            }
-            if ((DateTime.Now - click_Started).TotalSeconds > 0.2)
-            {
-                if (!Text.Text.Contains(".") && Text.Text != "")
+                if (!Text.Text.Contains(POINT_SYMBOL) && Text.Text != "" && Text.Text != ERROR_SYMBOL)
                 {
-                    Text.Text += ".";
+                    Text.Text += POINT_SYMBOL;
                 }
             }
             else
             {
+                double temp;
+                if (Text.Text != ERROR_SYMBOL && Text.Text != "" && Text.Text != "-" && !double.TryParse(Text.Text, out temp))
+                {
+                    if (!Text.Text.EndsWith(POINT_SYMBOL))
+                    {
+                        Text.Text = ERROR_SYMBOL;
+                        return;
+                    }
+                }
+                if (Text.Text == ERROR_SYMBOL)
+                {
+                    Text.Text = "";
+                }
                 if (Text.Text != "0")
                 {
                     Text.Text += "0";
@@ -66,13 +72,18 @@ namespace CalculatorWPF
         }
 
         private void Button_number_Click(object sender, RoutedEventArgs e)
-        {
-            if (Text.Text.Length > 10 || (Text.Text.Length > 11 && Text.Text.Contains(".")))
+        { 
+            double temp;
+            if (Text.Text == "0") return;
+            if (Text.Text != ERROR_SYMBOL && Text.Text != "" && Text.Text != "-" && !double.TryParse(Text.Text, out temp))
             {
-                Text.Text = "E";
-                return;
+                if (!Text.Text.EndsWith(POINT_SYMBOL))
+                {
+                    Text.Text = ERROR_SYMBOL;
+                    return;
+                }
             }
-            if (Text.Text == "E")
+            if (Text.Text == ERROR_SYMBOL)
             {
                 Text.Text = "";
             }
@@ -84,6 +95,41 @@ namespace CalculatorWPF
         private void B_result_Click(object sender, RoutedEventArgs e)
         {
             var btn = e.Source as Button;
+            double num1, num2;
+            if (Second_Lay)
+            {
+                Text2 = Text.Text;
+                if (double.TryParse(Text1, out num1) && double.TryParse(Text2, out num2))
+                {
+                    switch (Operat)
+                    {
+                        case '-':
+                            Reset(num1 - num2);
+                            break;
+                        case '+':
+                            Reset(num1 + num2);
+                            break;
+                    }
+                }
+            }
+        }
+        void Reset(double result)
+        {
+            Text1 = result.ToString();
+            Text2 = "";
+            Second_Lay = false;
+            Text.Text = Text1;
+        }
+
+        private void B_plus_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Second_Lay)
+            {
+                Text1 = Text.Text;
+                Text.Text = "";
+                Operat = '+';
+                Second_Lay = true;
+            }
         }
 
         private void B_minus_Click(object sender, RoutedEventArgs e)
@@ -93,15 +139,23 @@ namespace CalculatorWPF
                 Text.Text += "-";
             } else
             {
-                if (!Second_Lay)
+                if (Text.Text != "-")
                 {
-                    Text1 = Text.Text;
+                    if (!Second_Lay)
+                    {
+                        Text1 = Text.Text;
+                        Text.Text = "";
+                        Operat = '-';
+                        Second_Lay = true;
+                    }
+                } else
+                {
                     Text.Text = "";
-                    Operat = '-';
                 }
             }
         }
 
 
+        
     }
 }

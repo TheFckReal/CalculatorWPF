@@ -31,7 +31,7 @@
         <Button x:Name="B5" Grid.Column="1" Grid.Row="2" Content="5" Click="Button_number_Click" Background="#84798a" FontStyle="Normal" FontSize="36"/>
         <Button x:Name="B6" Grid.Column="2" Grid.Row="2" Content="6" Click="Button_number_Click" Background="#84798a" FontStyle="Normal" FontSize="36"/>
 
-        <Button x:Name="B_plus" Grid.Column="3" Grid.Row="2" Content="+" Background="#2c2834" FontStyle="Normal" Foreground="Gray" FontSize="36"/>
+        <Button x:Name="B_plus" Grid.Column="3" Grid.Row="2" Content="+" Background="#2c2834" FontStyle="Normal" Foreground="Gray" FontSize="36" Click="B_plus_Click"/>
         <!--3 строка-->
         <Button x:Name="B7" Grid.Column="0" Grid.Row="3" Content="7" Click="Button_number_Click" Background="#84798a" FontStyle="Normal" FontSize="36"/>
         <Button x:Name="B8" Grid.Column="1" Grid.Row="3" Content="8" Click="Button_number_Click" Background="#84798a" FontStyle="Normal" FontSize="36"/>
@@ -39,7 +39,7 @@
 
         <Button x:Name="B_div" Grid.Column="3" Grid.Row="3" Content="/" Background="#2c2834" FontStyle="Normal" Foreground="Gray" FontSize="36"/>
         <!--4 строка-->
-        <Button x:Name="B0" Grid.Column="1" Grid.Row="4" Content="0" Background="#84798a" FontStyle="Normal" FontSize="36" PreviewMouseLeftButtonDown="Button_PreviewMouseLeftButtonDown" PreviewMouseLeftButtonUp="Button_PreviewMouseLeftButtonUp"/>
+        <Button x:Name="B0" Grid.Column="1" Grid.Row="4" Content="0/," Background="#84798a" FontStyle="Normal" FontSize="36" PreviewMouseLeftButtonDown="Button_PreviewMouseLeftButtonDown" PreviewMouseLeftButtonUp="Button_PreviewMouseLeftButtonUp"/>
 
         <Button x:Name="B_clear" Grid.Column="0" Grid.Row="4" Content="C" Background="#2c2834" FontStyle="Normal" Foreground="Gray" FontSize="36"/>
         <Button x:Name="B_mult" Grid.Column="2" Grid.Row="4" Content="*" Background="#2c2834" FontStyle="Normal" Foreground="Gray" FontSize="36"/>
