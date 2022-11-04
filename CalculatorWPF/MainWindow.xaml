@@ -37,14 +37,14 @@
         <Button x:Name="B8" Grid.Column="1" Grid.Row="3" Content="8" Click="Button_number_Click" Background="#84798a" FontStyle="Normal" FontSize="36"/>
         <Button x:Name="B9" Grid.Column="2" Grid.Row="3" Content="9" Click="Button_number_Click" Background="#84798a" FontStyle="Normal" FontSize="36"/>
 
-        <Button x:Name="B_div" Grid.Column="3" Grid.Row="3" Content="/" Background="#2c2834" FontStyle="Normal" Foreground="Gray" FontSize="36"/>
+        <Button x:Name="B_div" Grid.Column="3" Grid.Row="3" Content="/" Background="#2c2834" FontStyle="Normal" Foreground="Gray" FontSize="36" Click="B_div_Click"/>
         <!--4 строка-->
         <Button x:Name="B0" Grid.Column="1" Grid.Row="4" Content="0/," Background="#84798a" FontStyle="Normal" FontSize="36" PreviewMouseLeftButtonDown="Button_PreviewMouseLeftButtonDown" PreviewMouseLeftButtonUp="Button_PreviewMouseLeftButtonUp"/>
 
-        <Button x:Name="B_clear" Grid.Column="0" Grid.Row="4" Content="C" Background="#2c2834" FontStyle="Normal" Foreground="Gray" FontSize="36"/>
-        <Button x:Name="B_mult" Grid.Column="2" Grid.Row="4" Content="*" Background="#2c2834" FontStyle="Normal" Foreground="Gray" FontSize="36"/>
+        <Button x:Name="B_clear" Grid.Column="0" Grid.Row="4" Content="C" Background="#2c2834" FontStyle="Normal" Foreground="Gray" FontSize="36" Click="B_clear_Click"/>
+        <Button x:Name="B_mult" Grid.Column="2" Grid.Row="4" Content="*" Background="#2c2834" FontStyle="Normal" Foreground="Gray" FontSize="36" Click="B_mult_Click"/>
         <Button x:Name="B_result" Grid.Column="3" Grid.Row="4" Content="=" Background="#2c2834" FontStyle="Normal" Foreground="Gray" FontSize="36" Click="B_result_Click"/>
 
-        <TextBlock x:Name="Text" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" FontSize="36" Margin="5" Background="GhostWhite"/>
+        <TextBlock x:Name="Text" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" FontSize="60" Margin="5" Background="GhostWhite" FontFamily="OCR A Extended"/>
     </Grid>
 </Window>

@@ -109,7 +109,28 @@ namespace CalculatorWPF
                         case '+':
                             Reset(num1 + num2);
                             break;
+                        case '*':
+                            Reset(num1 * num2);
+                            break;
+                        case '/':
+                            if (num2 != 0)
+                            {
+                                Reset(num1 / num2);
+                            } else
+                            {
+                                Text1 = "";
+                                Text2 = "";
+                                Second_Lay = false;
+                                Text.Text = "E";
+                            }
+                            break;
                     }
+                } else
+                {
+                    Text1 = "";
+                    Text2 = "";
+                    Second_Lay = false;
+                    Text.Text = "E";
                 }
             }
         }
@@ -128,6 +149,47 @@ namespace CalculatorWPF
                 Text1 = Text.Text;
                 Text.Text = "";
                 Operat = '+';
+                Second_Lay = true;
+            }
+        }
+
+        private void B_mult_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Second_Lay)
+            {
+                Text1 = Text.Text;
+                Text.Text = "";
+                Operat = '*';
+                Second_Lay = true;
+            }
+        }
+
+        private void B_clear_Click(object sender, RoutedEventArgs e)
+        {
+            if (Second_Lay)
+            {
+                if (Text.Text == "")
+                {
+                    Second_Lay = false;
+                    Text1 = "";
+                } else
+                {
+                    Text.Text = "";
+                }
+            } else
+            {
+                Text1 = "";
+                Text.Text = ""; 
+            }
+        }
+
+        private void B_div_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Second_Lay)
+            {
+                Text1 = Text.Text;
+                Text.Text = "";
+                Operat = '/';
                 Second_Lay = true;
             }
         }
